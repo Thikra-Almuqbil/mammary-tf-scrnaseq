@@ -1,0 +1,33 @@
+quantity,value,where_it_comes_from
+Samples analysed,8,data/raw/sample_info.csv
+Developmental stages,4,"Nulliparous, gestation, lactation, post-involution"
+Cells in the CellRanger matrices,25806,script 01 output
+Cells per stage at import (NP),4376,script 01 output
+Cells per stage at import (G),6021,script 01 output
+Cells per stage at import (L),9603,script 01 output
+Cells per stage at import (PI),5806,script 01 output
+Cells kept after per-sample QC,25802,script 02c output
+Cells removed by per-sample QC,4,script 02c output
+Cells the course 2-MAD scheme would have removed instead,2110,script 02b output
+Highly variable genes chosen by SCTransform,3000,script 03 output
+Principal components kept,20,elbow plot in script 04a
+t-SNE perplexity,50,script 06a (value used by Bach et al.)
+Non-epithelial cells removed (immune / fibroblast / endothelial),1813,script 06a output
+Epithelial cells taken forward,23989,script 06a output
+Epithelial cells per stage (NP),4245,results/tables/annotation_table_clusters_by_stage.csv
+Epithelial cells per stage (G),5592,results/tables/annotation_table_clusters_by_stage.csv
+Epithelial cells per stage (L),8441,results/tables/annotation_table_clusters_by_stage.csv
+Epithelial cells per stage (PI),5711,results/tables/annotation_table_clusters_by_stage.csv
+Reference clusters (Louvain k=25 resolution 0.4),15,script 06c output
+Mean silhouette width of the chosen setting,0.212,script 06b output
+Mean silhouette width of the runner-up setting,0.160,script 06b output
+Adjusted Rand index Louvain vs Leiden,0.876,script 06d output
+Mouse transcription factors in the AnimalTFDB 4.0 list,1611,data/raw/Mus_musculus_TF.txt
+Transcription factors present in the RNA assay,1346,script 09 output
+Expression-matched control genes sampled,1346,script 09 output
+Clusters found using transcription factors only,9,results/tables/tf_ari_results.csv
+Clusters found using the matched control genes,11,results/tables/tf_ari_results.csv
+Adjusted Rand index: transcription factors vs reference,0.533,results/tables/tf_ari_results.csv
+Adjusted Rand index: matched control vs reference,0.728,results/tables/tf_ari_results.csv
+Adjusted Rand index: transcription factors vs control,0.608,results/tables/tf_ari_results.csv
+Cells collapsed into the single hormone-sensing TF cluster,6057,results/tables/tf_clusters_vs_reference.csv

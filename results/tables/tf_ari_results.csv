@@ -1,0 +1,4 @@
+comparison,n_genes,n_clusters,ARI
+TF-only vs reference,1346,9,0.5331833196962245
+Expression-matched control vs reference,1346,11,0.7280018543160861
+TF-only vs control,NA,NA,0.6077234114306727

@@ -1,0 +1,9 @@
+sample,sra_run,stage
+NP_1,GSM2834498,Nulliparous
+NP_2,GSM2834499,Nulliparous
+G_1,GSM2834500,Gestation
+G_2,GSM2834501,Gestation
+L_1,GSM2834502,Lactation
+L_2,GSM2834503,Lactation
+PI_1,GSM2834504,Post-involution
+PI_2,GSM2834505,Post-involution
