@@ -620,15 +620,3 @@ citation.
 
 15. Cambridge Bioinformatics Training. Single Cell RNA-seq Analysis.
     <https://cambiotraining.github.io/single-cell-rnaseq/>
-    This is the course whose practicals every analytical step here follows.
-    It is teaching material rather than a formally published citable work, so it
-    has no DOI and no fixed author list. I cite it as a URL and note that
-    limitation rather than constructing a citation for it.
-
-**A note on verification.** References 1 and 2, the two that carry the actual
-scientific claims of this project, I confirmed directly against the publisher
-records, including the full author lists. References 3 to 14 are standard method
-and software citations that I have given in the form in which their authors ask
-to be cited, and I checked the journal, year, volume and DOI for each; I have not
-independently re-verified every author initial. Reference 15 is deliberately not
-formatted as a formal citation, because it is not a formally citable work.
