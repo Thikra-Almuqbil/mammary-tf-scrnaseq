@@ -1,6 +1,6 @@
 # Transcription factors encode lineage but not developmental state in the mouse mammary epithelium
 
-**Thikra Alwazzan**
+**Thikra Almuqbil**
 Single-cell RNA-seq mini project, bioinformatics summer school, 2026
 Dataset: Bach et al. (2017), GEO GSE106273
 
