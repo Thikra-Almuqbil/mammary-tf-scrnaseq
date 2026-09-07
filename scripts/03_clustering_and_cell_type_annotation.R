@@ -128,7 +128,7 @@ p_coarse <- DimPlot(qc_seurat_object,
 p_coarse
 
 ggsave("results/graphs/03_coarse_clusters_umap.png",
-       plot = p_coarse, width = 8, height = 6, dpi = 300)
+       plot = p_coarse, width = 8, height = 6, dpi = 300, bg = "white")
 
 
 #### Which clusters are not epithelial? ####
@@ -181,7 +181,7 @@ p_dotplot <- DotPlot(qc_seurat_object,
 p_dotplot
 
 ggsave("results/graphs/03_contaminant_dotplot.png",
-       plot = p_dotplot, width = 11, height = 6, dpi = 300)
+       plot = p_dotplot, width = 11, height = 6, dpi = 300, bg = "white")
 
 # The same information as violins, which I find easier to read off when I want
 # to be sure about one particular cluster
@@ -194,7 +194,7 @@ p_vln <- VlnPlot(qc_seurat_object,
 p_vln
 
 ggsave("results/graphs/03_contaminant_violins.png",
-       plot = p_vln, width = 12, height = 8, dpi = 300)
+       plot = p_vln, width = 12, height = 8, dpi = 300, bg = "white")
 
 DefaultAssay(qc_seurat_object) <- "SCT"
 
@@ -296,7 +296,7 @@ p_elbow <- ElbowPlot(epi_seurat_object, ndims = 50) +
 p_elbow
 
 ggsave("results/graphs/03_elbow_epithelial.png",
-       plot = p_elbow, width = 7, height = 5, dpi = 300)
+       plot = p_elbow, width = 7, height = 5, dpi = 300, bg = "white")
 
 # What are the new components made of? PC4 turned out to carry a dissociation
 # stress signature, which becomes relevant in part 6 when one cluster splits
@@ -361,7 +361,7 @@ p_fig1b <- DimPlot(epi_seurat_object,
 p_fig1b
 
 ggsave("results/graphs/03_fig1b_tsne_by_stage.png",
-       plot = p_fig1b, width = 8, height = 6, dpi = 300)
+       plot = p_fig1b, width = 8, height = 6, dpi = 300, bg = "white")
 
 p_fig1b_split <- DimPlot(epi_seurat_object,
                          reduction = "tsne",
@@ -373,7 +373,7 @@ p_fig1b_split <- DimPlot(epi_seurat_object,
 p_fig1b_split
 
 ggsave("results/graphs/03_fig1b_split.png",
-       plot = p_fig1b_split, width = 14, height = 4, dpi = 300)
+       plot = p_fig1b_split, width = 14, height = 4, dpi = 300, bg = "white")
 
 # The replicate check again, now on the epithelial cells. This is the figure
 # I point at when someone asks whether the stage separation is a batch effect.
@@ -386,7 +386,7 @@ p_tsne_sample <- DimPlot(epi_seurat_object,
 p_tsne_sample
 
 ggsave("results/graphs/03_tsne_by_sample.png",
-       plot = p_tsne_sample, width = 8, height = 6, dpi = 300)
+       plot = p_tsne_sample, width = 8, height = 6, dpi = 300, bg = "white")
 
 
 #### My version of the paper's Fig 1d ####
@@ -405,7 +405,7 @@ p_fig1d <- FeaturePlot(epi_seurat_object,
 p_fig1d
 
 ggsave("results/graphs/03_fig1d_krt5_krt18.png",
-       plot = p_fig1d, width = 11, height = 5, dpi = 300)
+       plot = p_fig1d, width = 11, height = 5, dpi = 300, bg = "white")
 
 DefaultAssay(epi_seurat_object) <- "SCT"
 
@@ -423,7 +423,7 @@ p_umap_stage <- DimPlot(epi_seurat_object,
 p_umap_stage
 
 ggsave("results/graphs/03_umap_epithelial_by_stage.png",
-       plot = p_umap_stage, width = 8, height = 6, dpi = 300)
+       plot = p_umap_stage, width = 8, height = 6, dpi = 300, bg = "white")
 
 
 #### CHECKPOINT 2 ####
@@ -606,7 +606,7 @@ p_sil <- silhouette_stats %>%
 p_sil
 
 ggsave("results/graphs/03_silhouette_sweep.png",
-       plot = p_sil, width = 9, height = 6, dpi = 300)
+       plot = p_sil, width = 9, height = 6, dpi = 300, bg = "white")
 
 
 #### Two of the options drawn on the t-SNE ####
@@ -631,7 +631,7 @@ p_compare <- p_k25 + p_k25_r12
 p_compare
 
 ggsave("results/graphs/03_cluster_options.png",
-       plot = p_compare, width = 14, height = 6, dpi = 300)
+       plot = p_compare, width = 14, height = 6, dpi = 300, bg = "white")
 
 
 #### CHECKPOINT 3 ####
@@ -699,7 +699,7 @@ p_fig1c <- DimPlot(epi_seurat_object,
 p_fig1c
 
 ggsave("results/graphs/03_fig1c_clusters_tsne.png",
-       plot = p_fig1c, width = 8, height = 6, dpi = 300)
+       plot = p_fig1c, width = 8, height = 6, dpi = 300, bg = "white")
 
 # The same clusters on the UMAP. If the cluster boundaries agreed with the
 # t-SNE only, I would worry that I was reading structure out of one particular
@@ -716,7 +716,7 @@ p_fig1c_umap <- DimPlot(epi_seurat_object,
 p_fig1c_umap
 
 ggsave("results/graphs/03_clusters_umap.png",
-       plot = p_fig1c_umap, width = 8, height = 6, dpi = 300)
+       plot = p_fig1c_umap, width = 8, height = 6, dpi = 300, bg = "white")
 
 
 #### Cluster composition by stage ####
@@ -744,7 +744,7 @@ p_composition <- data.frame(
 p_composition
 
 ggsave("results/graphs/03_cluster_composition_by_stage.png",
-       plot = p_composition, width = 9, height = 6, dpi = 300)
+       plot = p_composition, width = 9, height = 6, dpi = 300, bg = "white")
 
 
 #### CHECKPOINT 4 ####
@@ -840,7 +840,7 @@ p_algo <- p_louvain + p_leiden +
 p_algo
 
 ggsave("results/graphs/03_louvain_vs_leiden.png",
-       plot = p_algo, width = 14, height = 6, dpi = 300)
+       plot = p_algo, width = 14, height = 6, dpi = 300, bg = "white")
 
 # This part only ADDS a column, it does not touch final_cluster, so saving
 # back over the checkpoint is safe.
@@ -921,7 +921,7 @@ p_table1 <- DotPlot(epi_seurat_object,
 p_table1
 
 ggsave("results/graphs/03_table1_markers_dotplot.png",
-       plot = p_table1, width = 14, height = 7, dpi = 300)
+       plot = p_table1, width = 14, height = 7, dpi = 300, bg = "white")
 
 
 #### The genes shown in the paper's Fig 2b ####
@@ -939,7 +939,7 @@ p_fig2b <- FeaturePlot(epi_seurat_object,
 p_fig2b
 
 ggsave("results/graphs/03_fig2b_markers.png",
-       plot = p_fig2b, width = 13, height = 12, dpi = 300)
+       plot = p_fig2b, width = 13, height = 12, dpi = 300, bg = "white")
 
 
 #### Settling the cluster 11 question I left open in part 1 ####
@@ -960,7 +960,7 @@ p_mural <- VlnPlot(epi_seurat_object,
 p_mural
 
 ggsave("results/graphs/03_mural_markers.png",
-       plot = p_mural, width = 14, height = 8, dpi = 300)
+       plot = p_mural, width = 14, height = 8, dpi = 300, bg = "white")
 
 
 #### Is cluster 14 a stress artefact or a doublet cluster? ####
@@ -985,7 +985,7 @@ p_stress <- VlnPlot(epi_seurat_object,
 p_stress
 
 ggsave("results/graphs/03_stress_markers.png",
-       plot = p_stress, width = 14, height = 8, dpi = 300)
+       plot = p_stress, width = 14, height = 8, dpi = 300, bg = "white")
 
 
 
@@ -1110,7 +1110,7 @@ p_annotated <- DimPlot(epi_seurat_object,
 p_annotated
 
 ggsave("results/graphs/03_annotated_clusters_tsne.png",
-       plot = p_annotated, width = 9, height = 7, dpi = 300)
+       plot = p_annotated, width = 9, height = 7, dpi = 300, bg = "white")
 
 # A version with the legend instead, for a slide where in-plot labels are
 # too crowded to read from the back of a room
@@ -1123,7 +1123,7 @@ p_annotated_legend <- DimPlot(epi_seurat_object,
 p_annotated_legend
 
 ggsave("results/graphs/03_annotated_clusters_legend.png",
-       plot = p_annotated_legend, width = 11, height = 7, dpi = 300)
+       plot = p_annotated_legend, width = 11, height = 7, dpi = 300, bg = "white")
 
 
 #### The paper's Fig 2c: the marker heatmap ####
@@ -1166,7 +1166,7 @@ p_fig2c <- DoHeatmap(epi_downsampled,
 p_fig2c
 
 ggsave("results/graphs/03_fig2c_marker_heatmap.png",
-       plot = p_fig2c, width = 14, height = 9, dpi = 300)
+       plot = p_fig2c, width = 14, height = 9, dpi = 300, bg = "white")
 
 
 #### Cluster composition by stage, with the labels ####
@@ -1186,7 +1186,7 @@ p_composition_labelled <- data.frame(
 p_composition_labelled
 
 ggsave("results/graphs/03_annotated_composition.png",
-       plot = p_composition_labelled, width = 10, height = 6, dpi = 300)
+       plot = p_composition_labelled, width = 10, height = 6, dpi = 300, bg = "white")
 
 
 #### CHECKPOINT 5: END OF THE REQUIRED PART OF SCRIPT 3 ####

@@ -205,7 +205,7 @@ p_matching <- gene_info %>%
 p_matching
 
 ggsave("results/graphs/04_expression_matching.png",
-       plot = p_matching, width = 9, height = 6, dpi = 300)
+       plot = p_matching, width = 9, height = 6, dpi = 300, bg = "white")
 
 
 
@@ -403,7 +403,7 @@ p_main <- p_ref + p_tf + p_ctrl +
 p_main
 
 ggsave("results/graphs/04_tf_vs_control_vs_reference.png",
-       plot = p_main, width = 20, height = 6.5, dpi = 300)
+       plot = p_main, width = 20, height = 6.5, dpi = 300, bg = "white")
 
 
 #### Final save ####

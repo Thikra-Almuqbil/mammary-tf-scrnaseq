@@ -292,6 +292,13 @@ Stdev(qc_seurat_object, reduction = "pca")
 # plot pane leaves nothing on disk, so when I wanted a figure for the slides I
 # had to re-run the script. Now the figures are made once.
 #
+# bg = "white" on every ggsave is also something I learned the hard way. On my
+# setup some of these came out with a TRANSPARENT background instead of a
+# white one, which looks fine in RStudio and fine on a white page, but on any
+# dark background the black axis text and titles become invisible. GitHub
+# renders READMEs in dark mode by default, so three of my figures were
+# unreadable there until I forced the background.
+#
 # Reading my own elbow plot: there is a clear break after PC4, and the per-PC
 # gain drops below about 0.15 from roughly PC20 onwards. I keep 20. This is a
 # judgement call, not a rule, and the usual advice is to err on the generous
@@ -304,7 +311,7 @@ p_elbow <- ElbowPlot(qc_seurat_object, ndims = 50) +
 p_elbow
 
 ggsave("results/graphs/02_elbow_all_cells.png", plot = p_elbow,
-       width = 7, height = 5, dpi = 300)
+       width = 7, height = 5, dpi = 300, bg = "white")
 
 
 #### What are the first components separating? ####
@@ -318,7 +325,7 @@ p_pca_stage <- DimPlot(qc_seurat_object,
 p_pca_stage
 
 ggsave("results/graphs/02_pca_by_stage.png", plot = p_pca_stage,
-       width = 8, height = 6, dpi = 300)
+       width = 8, height = 6, dpi = 300, bg = "white")
 
 # THIS IS THE IMPORTANT ONE. It is the diagnostic behind two decisions: to
 # split by sample in part 1, and NOT to run batch correction at all.
@@ -338,7 +345,7 @@ p_pca_sample <- DimPlot(qc_seurat_object,
 p_pca_sample
 
 ggsave("results/graphs/02_pca_by_sample.png", plot = p_pca_sample,
-       width = 8, height = 6, dpi = 300)
+       width = 8, height = 6, dpi = 300, bg = "white")
 
 # The two side by side, which is the version I present
 p_pca_pair <- p_pca_stage + p_pca_sample +
@@ -350,7 +357,7 @@ p_pca_pair <- p_pca_stage + p_pca_sample +
 p_pca_pair
 
 ggsave("results/graphs/02_pca_stage_vs_sample.png", plot = p_pca_pair,
-       width = 14, height = 6, dpi = 300)
+       width = 14, height = 6, dpi = 300, bg = "white")
 
 p_pca_23 <- DimPlot(qc_seurat_object,
                     reduction = "pca",
@@ -361,7 +368,7 @@ p_pca_23 <- DimPlot(qc_seurat_object,
 p_pca_23
 
 ggsave("results/graphs/02_pca_pc2_pc3.png", plot = p_pca_23,
-       width = 8, height = 6, dpi = 300)
+       width = 8, height = 6, dpi = 300, bg = "white")
 
 # Which genes load most strongly on the first few components? This is how I
 # find out what biological axis each PC represents, rather than treating the
@@ -440,7 +447,7 @@ p_umap_stage <- DimPlot(qc_seurat_object,
 p_umap_stage
 
 ggsave("results/graphs/02_umap_by_stage.png",
-       plot = p_umap_stage, width = 8, height = 6, dpi = 300)
+       plot = p_umap_stage, width = 8, height = 6, dpi = 300, bg = "white")
 
 # One panel per stage, which makes it much easier to see which region belongs
 # to which stage than trying to read four overlapping colours
@@ -452,7 +459,7 @@ p_umap_split <- DimPlot(qc_seurat_object,
 p_umap_split
 
 ggsave("results/graphs/02_umap_split_by_stage.png",
-       plot = p_umap_split, width = 14, height = 4, dpi = 300)
+       plot = p_umap_split, width = 14, height = 4, dpi = 300, bg = "white")
 
 # Coloured by individual mouse, the replicate check again
 p_umap_sample <- DimPlot(qc_seurat_object,
@@ -463,7 +470,7 @@ p_umap_sample <- DimPlot(qc_seurat_object,
 p_umap_sample
 
 ggsave("results/graphs/02_umap_by_sample.png",
-       plot = p_umap_sample, width = 8, height = 6, dpi = 300)
+       plot = p_umap_sample, width = 8, height = 6, dpi = 300, bg = "white")
 
 
 #### Basal and luminal markers ####
@@ -482,7 +489,7 @@ p_krt <- FeaturePlot(qc_seurat_object,
 p_krt
 
 ggsave("results/graphs/02_krt5_krt18.png",
-       plot = p_krt, width = 11, height = 5, dpi = 300)
+       plot = p_krt, width = 11, height = 5, dpi = 300, bg = "white")
 
 
 #### Where are the non-epithelial cells? ####
@@ -505,7 +512,7 @@ p_contaminants <- FeaturePlot(qc_seurat_object,
 p_contaminants
 
 ggsave("results/graphs/02_contaminant_markers.png",
-       plot = p_contaminants, width = 10, height = 8, dpi = 300)
+       plot = p_contaminants, width = 10, height = 8, dpi = 300, bg = "white")
 
 
 #### Did leaving out vars.to.regress cost me anything? ####
@@ -521,7 +528,7 @@ p_qc_metrics <- FeaturePlot(qc_seurat_object,
 p_qc_metrics
 
 ggsave("results/graphs/02_percentmt_ncount.png",
-       plot = p_qc_metrics, width = 11, height = 5, dpi = 300)
+       plot = p_qc_metrics, width = 11, height = 5, dpi = 300, bg = "white")
 
 # Put the default assay back to SCT so that everything downstream behaves.
 # Forgetting this line causes confusing errors in the next script.
