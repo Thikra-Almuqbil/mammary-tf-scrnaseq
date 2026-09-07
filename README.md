@@ -164,4 +164,4 @@ Written out properly in `REPORT.md`, but the short version:
 
 ## Author
 
-Thikra Alwazzan. Bioinformatics summer school, single-cell week, 2026.
+Thikra Almuqbil. Bioinformatics summer school, single-cell week, 2026.
