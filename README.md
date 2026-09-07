@@ -142,11 +142,6 @@ threshold schemes before choosing, in part 3 of script 1, because a MAD-based cu
 *relative*: it always removes a slice off the bottom of whatever distribution
 you hand it, whether or not anything is actually wrong.
 
-**The scripts are written to match the course practicals, not to be elegant.**
-Explicit and repetitive, no custom functions, no clever pipelines. If the
-practical wrote five near-identical lines I wrote five lines. That was a
-deliberate constraint on this project and it is why the code looks the way it
-does.
 
 ## Honest limitations
 
